@@ -1,18 +1,20 @@
 services:
   - type: web
-    name: n8n
-    env: docker
+    name: n8n-chatbot
+    env: node
     plan: free
+    buildCommand: npm run build
+    startCommand: n8n
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
         value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: "yoursecretpassword"
-      - key: N8N_ENCRYPTION_KEY
-        value: "yoursecuritykey"
+        value: "password123"
+      - key: N8N_PROTOCOL
+        value: "https"
+      - key: N8N_HOST
+        value: "n8n-chatbot-5kzn.onrender.com"
       - key: WEBHOOK_URL
         value: "https://n8n-chatbot-5kzn.onrender.com/"
-    ports:
-      - 5678
