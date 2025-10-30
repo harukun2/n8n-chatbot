@@ -13,4 +13,6 @@ services:
       - key: N8N_ENCRYPTION_KEY
         value: "yoursecuritykey"
       - key: WEBHOOK_URL
-        value: "https://n8n-yourapp.onrender.com/"
+        value: "https://n8n-chatbot-5kzn.onrender.com/"
+    ports:
+      - 5678
